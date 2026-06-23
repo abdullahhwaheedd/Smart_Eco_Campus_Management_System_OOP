@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B41938B7-C0EB-46BE-8300-88F921E68FED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SECMSS</RootNamespace>
+    <AssemblyName>SECMSS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\AddReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\AddReportForm.Designer.cs">
+      <DependentUpon>AddReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL\ReportBL.cs" />
+    <Compile Include="BL\UserBL.cs" />
+    <Compile Include="DL\Connectiondb.cs" />
+    <Compile Include="DL\IReportDL.cs" />
+    <Compile Include="DL\ReportDL.cs" />
+    <Compile Include="DL\UserDL.cs" />
+    <Compile Include="Ui\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdminModel.cs" />
+    <Compile Include="Model\ReporterModel.cs" />
+    <Compile Include="Model\ReportModel.cs" />
+    <Compile Include="Model\SupervisorModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ui\ReporterDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\.Designer.cs">
+      <DependentUpon>ReporterDashboard.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\SupervisorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\SupervisorDashboard.Designer.cs">
+      <DependentUpon>SupervisorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\UpdateReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\UpdateReportForm.Designer.cs">
+      <DependentUpon>UpdateReportForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\AddReportForm.resx">
+      <DependentUpon>AddReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ReporterDashboard.resx">
+      <DependentUpon>ReporterDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\SupervisorDashboard.resx">
+      <DependentUpon>SupervisorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\UpdateReportForm.resx">
+      <DependentUpon>UpdateReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smart_eco_campus_background.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
